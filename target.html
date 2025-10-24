@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DEMO: Vulnerable Target</title>
+  <meta name="robots" content="noindex">
+  <style>
+    body{font-family:sans-serif;padding:24px}
+    .warn{background:#ffe8e8;border:2px solid #ff4d4d;padding:12px;margin-bottom:16px}
+  </style>
+</head>
+<body>
+  <div class="warn"><strong>DEMO ONLY — intentionally vulnerable. No real transactions. Remove after testing.</strong></div>
+  <h1>Vulnerable Target Page (Demo)</h1>
+  <p>Clicks recorded: <span id="count">0</span></p>
+  <button id="pay">Pay $100 (SIMULATION)</button>
+
+  <script>
+    document.getElementById('pay').addEventListener('click', function(){
+      const el = document.getElementById('count');
+      el.textContent = parseInt(el.textContent,10) + 1;
+      console.log('SIMULATION: pay clicked — no real charge');
+      alert('SIMULATION: sensitive action triggered (no real effect).');
+    });
+  </script>
+</body>
+</html>
