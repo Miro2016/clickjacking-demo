@@ -10,7 +10,7 @@
   </style>
 </head>
 <body>
-  <div class="warn"><strong>DEMO ONLY — intentionally vulnerable. No real transactions. Remove after testing.</strong></div>
+  <div class="warn"><strong>DEMO ONLY</strong></div>
   <h1>Vulnerable Target Page (Demo)</h1>
   <p>Clicks recorded: <span id="count">0</span></p>
   <button id="pay">Pay $100 (SIMULATION)</button>
@@ -19,9 +19,10 @@
     document.getElementById('pay').addEventListener('click', function(){
       const el = document.getElementById('count');
       el.textContent = parseInt(el.textContent,10) + 1;
-      console.log('SIMULATION: pay clicked — no real charge');
+      console.log('SIMULATION: pay clicked');
       alert('SIMULATION: sensitive action triggered (no real effect).');
     });
   </script>
 </body>
 </html>
+
